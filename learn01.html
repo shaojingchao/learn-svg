@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>svg-基础</title>
+
+  <style>
+    #progress {
+     stroke-dasharray: 100px; stroke-dashoffset: 100px;
+     animation:processAnim 600ms linear infinite;
+     }
+
+     @keyframes processAnim{
+        from{
+            stroke-dashoffset:100px;
+        }
+        to{
+            stroke-dashoffset:300px;
+        }
+     }
+    </style>
+</head>
+<body>
+  <?xml version="1.0" standalone="no"?>
+  <svg width="100%" height="400" style="border:1px solid #aaa;border-radius:20px;box-shadow:0 3px 30px rgba(0,0,0,.2);" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 3000">
+    <!--矩形-->
+    <rect x="20" y="20" width="100" height="100" fill="red" stroke="green" stroke-width="10"></rect>
+
+    <!--圆角矩形-->
+    <rect x="200" y="20" width="100" height="100" rx="10" ry="10" fill="red" stroke="green" stroke-width="10"></rect>
+
+    <!--圆形-->
+    <circle cx="400" cy="70" r="50" stroke="orange" fill="grey" stroke-width="4"></circle>
+
+    <!--椭圆-->
+    <ellipse cx="600" cy="80" rx="80" ry="60" stroke="red" fill="white" stroke-width="4"></ellipse>
+
+    <!--直线-->
+    <line x1="700" y1="20"  x2="780" y2="150" stroke="orange" fill="white" stroke-width="4"></line>
+
+    <!--折线-->
+    <polyline points="800 20 810 120 790 150 880 150 880 20" stroke="blue" fill="white" stroke-width="4"></polyline>
+
+    <!--多边形-->
+    <polygon transform="translate(150,0)" points="800 20 810 120 790 150 880 150 880 20" stroke="blue" fill="white" stroke-width="4"></polygon>
+
+    <!--路径 -->
+    <path d="M1332 2059c-280-36-499-217-568-469-25-92-23-268 5-373 70-265 248-408 549-439 279-29 495 77 602 295 43 89 65 164 76 257l6 59 64 41c35 22 77 57 94 78 38 45 86 144 95 195 7 35 6 37-20 37-37 0-65 17-65 39 0 11 13 49 30 85 29 65 42 108 54 174l6 32-433-1c-237-1-460-5-495-10z" fill="none" stroke="#9B7B56" stroke-width="5"></path>
+  </svg>
+
+  <!-- circle -->
+
+  <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+    <circle r="100" cx="200" cy="200" fill="none" stroke-width="4" stroke="grey"></circle>
+    <circle id="progress" r="100" cx="200" cy="200" fill="none" stroke-width="4" stroke="red"></circle>
+  </svg>
+
+  <svg version="1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">
+    <g transform="matrix(.1 0 0 -.1 0 300)" fill="none" stroke-width="80">
+      <defs>
+        <path d="M1332 2059c-280-36-499-217-568-469-25-92-23-268 5-373 70-265 248-408 549-439 279-29 495 77 602 295 43 89 65 164 76 257l6 59 64 41c35 22 77 57 94 78 38 45 86 144 95 195 7 35 6 37-20 37-37 0-65 17-65 39 0 11 13 49 30 85 29 65 42 108 54 174l6 32-433-1c-237-1-460-5-495-10z" stroke-linejoin="round" id="a"></path>
+      </defs>
+      <use xlink:href="#a" stroke="#FEE69E"></use>
+      <use xlink:href="#a" stroke-dasharray="4100,700" stroke="#FDC22D">
+        <animate attributeName="stroke-dashoffset" dur=".7s" to="4800" repeatCount="1" calcMode="spline" keyTimes="0; 1" keySplines=".1,.2,.55,-0.3"></animate>
+      </use>
+    </g>
+  </svg>
+
+</body>
+</html>

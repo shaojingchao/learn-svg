@@ -1,0 +1,17 @@
+#progress {
+  transform: rotateZ(-90deg);
+  transform-origin: 50% 50%;
+  stroke-dasharray: 628.31853072;
+  stroke-dashoffset: 628.31853072;
+  stroke-width: 10px;
+  stroke-linecap: round;
+}
+#progress {
+  animation: progressAnimation 1600ms linear 500ms forwards;
+  transition: stroke-dasharray 400ms linear;
+}
+@keyframes progressAnimation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

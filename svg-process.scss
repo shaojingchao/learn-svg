@@ -1,0 +1,19 @@
+$radius: 90;
+$percent: 83;
+$circumference: (pi() * (2 * $radius));
+$stroke_percentage: $circumference - (($percent / 100) * $circumference);
+#progress {
+    stroke-dasharray: $circumference;
+    stroke-dashoffset: $circumference;
+}
+
+#progress {
+    animation: progressAnimation 1600ms linear 500ms forwards;
+    transition: stroke-dasharray 400ms linear;
+}
+
+@keyframes progressAnimation {
+    to {
+        stroke-dashoffset: $stroke_percentage;
+    }
+}
